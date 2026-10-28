@@ -16,15 +16,15 @@ typedef int32_t IVec2[2];
 /// Vector that has 2 float number elements
 typedef float FVec2[2];
 /// 2x2 Matrix that elements are integer
-typedef int32_t IMat2[2];
+typedef int32_t IMat2[2][2];
 /// 2x2 Matrix that elements are float point number
-typedef float FMat2[2];
+typedef float FMat2[2][2];
 /// Vector that has 4 integer elements
 typedef int32_t IVec4[4];
 /// Vector that has 4 float number elements
 typedef float FVec4[4];
 /// 4x4 Matrix that elements are integer
-typedef int32_t IMat4[4][4];
+typedef int32_t IMat4[4][4] ;
 /// 4x4 Matrix that elements are float point number
 typedef float FMat4[4][4];
 /// Affine Coordinate that all components are integer
@@ -92,7 +92,7 @@ void intMatLMulMat(const IMat4 A, IMat4 B);
 /// A = A * B
 void intMatRMulMat(IMat4 A, const IMat4 B);
 /// A = transpose(A)
-void intMatTrCopy(IMat4 M_T, const IMat4 A);
+void intMatTranCopy(IMat4 M_T, const IMat4 A);
 
 /// A = diag(b[0], b[1], b[2], b[3])
 void floatMatDiag(FMat4 A, const FVec4 b);
@@ -113,7 +113,7 @@ void floatMatLMulMat(const FMat4 A, FMat4 B);
 /// A = A * B
 void floatMatRMulMat(FMat4 A, const FMat4 B);
 /// M = transpose(M)
-void floatMatTrCopy(FMat4 M_T, const FMat4 M);
+void floatMatTranCopy(FMat4 M_T, const FMat4 M);
 
 /// Unitize:
 /// @formula P = (P[0]/P[3], P[1]/P[3], P[2]/P[3], 1)
